@@ -25,7 +25,7 @@ while True:
     o = input('Qual a operação: ').strip().lower()
     b = float(input('Digite o segundo valor: '))
     resp = escolha(o)
-    print('{}'.format(resp))
+    print(f'{a} {o} {b} = {resp}')
     saida = str(input('Quer sair: ')).strip().lower()
     if saida == 'sim':
         break
