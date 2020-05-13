@@ -11,26 +11,21 @@ def multiplicacao(a, b):
     return a * b
 
 def escolha(valor):
-    if resp == 1:
+    if o == '+':
         return soma(a, b)
-    elif resp == 2:
+    elif o == '-':
         return subtracao(a, b)
-    elif resp == 3:
+    elif o == '/':
         return divisao(a, b)
-    elif resp == 4:
+    elif o == '*':
         return multiplicacao(a, b)
 
-print('''Opções
-[1] SOMAR
-[2] SUBTRAIR
-[3] DIVIDIR
-[4] MULTIPLICAR''')
 while True:
-    resp = int(input('Escolha uma opção: '))
-    if resp == 1 or resp == 2 or resp == 3 or resp == 4:
+    a = float(input('Digite o primeiro valor: '))
+    o = input('Qual a operação: ').strip().lower()
+    b = float(input('Digite o segundo valor: '))
+    resp = escolha(o)
+    print('{}'.format(resp))
+    saida = str(input('Quer sair: ')).strip().lower()
+    if saida == 'sim':
         break
-    else:
-        print('Opção invalida, tente novamente!')
-a = float(input('Digite o primeiro valor: '))
-b = float(input('Digite o segundo valor: '))
-print(escolha(int(resp)))
