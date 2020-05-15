@@ -44,3 +44,16 @@ while True:
     saida = str(input('Quer sair: ')).strip().lower()
     if saida == 'sim':
         break
+    elif saida == 'nao':
+        continue
+    else:
+        resp_2 = True
+        while resp_2:
+            saida = str(input('Resposta invalida! Quer sair: ')).strip().lower()
+            if saida == 'nao':
+                break
+            elif saida == 'sim':
+                resp_2 = False
+    if resp_2 == False:
+        break
+    
