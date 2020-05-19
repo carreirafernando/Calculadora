@@ -1,59 +1,46 @@
-def soma(a, b):
-    return a + b
+class Calc:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    
+    def soma(self):
+        print(self.a + self.b)
+    
+    def subtracao(self):
+        print(self.a - self.b)
+    
+    def multiplicacao(self):
+        print(self.a * self.b)
+    
+    def divisao(self):
+        print(self.a / self.b)
+    
+    def potencia(self):
+        print(self.a ** self.b)
+    
+    def raiz(self):
+        print(self.a ** (1 / self.b))
+    
+    def escolha(self, acao):
+        if acao == '+':
+            saida.soma()
+        elif acao == '-':
+            saida.subtracao()
+        elif acao == '*':
+            saida.multiplicacao()
+        elif acao == '/':
+            saida.divisao()
+        elif acao == '**':
+            saida.potencia()
+        elif acao == 'raiz':
+            saida.raiz()
 
-def subtracao(a, b):
-    return a - b
-
-def divisao(a, b):
-    return a / b
-
-def multiplicacao(a, b):
-    return a * b
-
-def potencia(a, b):
-    return a ** b
-
-def raiz(a, b):
-    return a ** (1 / b)
-
-def porcentagem(a, b):
-    return (a / 100) * b
-
-def escolha(valor):
-    if o == '+':
-        return soma(a, b)
-    elif o == '-':
-        return subtracao(a, b)
-    elif o == '/':
-        return divisao(a, b)
-    elif o == '*':
-        return multiplicacao(a, b)
-    elif o == '^':
-        return a ** b
-    elif o == 'raiz':
-        return raiz(a, b)
-    elif o == '%':
-        return porcentagem(a, b)
 
 while True:
-    a = float(input('Digite o primeiro valor: '))
-    o = input('Qual a operação: ').strip().lower()
-    b = float(input('Digite o segundo valor: '))
-    resp = escolha(o)
-    print('{}'.format(resp))
-    saida = str(input('Quer sair: ')).strip().lower()
-    if saida == 'sim':
+    numero_1 = input('Digite um número ou digite "sair" para terminar: ')
+    if numero_1 == 'sair':
         break
-    elif saida == 'nao':
-        continue
-    else:
-        resp_2 = True
-        while resp_2:
-            saida = str(input('Resposta invalida! Quer sair: ')).strip().lower()
-            if saida == 'nao':
-                break
-            elif saida == 'sim':
-                resp_2 = False
-    if resp_2 == False:
-        break
-    
+    operacao = str(input('Qual a operação: '))
+    numero_2 = float(input('Digite um número: '))
+    saida = Calc(float(numero_1), numero_2)
+    saida.escolha(operacao)
